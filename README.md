@@ -1,4 +1,4 @@
-# Home Assistant Add-ons: Vic Garcia repository
+# Home Assistant Add-ons: Vic García repository
 
 Note: this repo was forked from: https://github.com/mrmichaelrb/hassio-addons
 
