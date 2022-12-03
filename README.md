@@ -1,4 +1,6 @@
-# Home Assistant Add-ons: Michael Richard Brown's repository
+# Home Assistant Add-ons: Vic Garcia repository
+
+Note: this repo was forked from: https://github.com/mrmichaelrb/hassio-addons
 
 Add-ons for Home Assistant, allow you to extend the functionality
 around your Home Assistant setup.

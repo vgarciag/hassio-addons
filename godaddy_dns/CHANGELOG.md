@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5
+
+- Updated base image
+- Fixed base som hashbang
+
 ## 1.0.4
 
 - Fixed S6 Overlay problem with HA's Docker base image
