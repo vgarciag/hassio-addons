@@ -8,5 +8,7 @@ RUN apk add --no-cache jq openssl \
     "https://raw.githubusercontent.com/lukas2511/dehydrated/v${DEHYDRATED_VERSION}/dehydrated" \
   && chmod a+x /usr/bin/dehydrated
 
+# dehydrated scripts are also copied into own gist as a backup: https://gist.github.com/vgarciag
+
 # Copy data
 COPY rootfs /

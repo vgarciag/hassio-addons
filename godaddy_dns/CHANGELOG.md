@@ -1,9 +1,14 @@
 # Changelog
 
+## 1.0.6
+
+- Converted JSON to Home Assistant standard YAML
+- Updated base images to latest version (3.20)
+
 ## 1.0.5
 
 - Updated base image
-- Fixed base som hashbang
+- Fixed base some shehbang
 
 ## 1.0.4
 
