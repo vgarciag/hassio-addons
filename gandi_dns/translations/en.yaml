@@ -16,15 +16,12 @@ configuration:
     description: Renew after x seconds (default for Let's Encrypt is 60 days)
   dns_delay:
     name: Seconds to wait between deploying the DNS challenge record and requesting a certificate
-  key:
-    name: GoDaddy API Key
-    description: Generated key from GoDaddy's API Key Management
-  secret:
-    name: GoDaddy API Secret
-    description: Corresponding GoDaddy API key secret
+  pat:
+    name: Gandi PAT Key
+    description: Gentate a PAT (Personal Access Token) using api developer portal. Max one year of duration
   domain:
     name: Domain
-    description: Domain name registered on GoDaddy account
+    description: Domain name registered on Gandi account
   hostname:
     name: Hostname
     description: Hostname used for accessing Home Assistant instance

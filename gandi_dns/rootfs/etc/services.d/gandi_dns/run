@@ -8,19 +8,17 @@ set -e
 CERT_DIR=/data/letsencrypt
 WORK_DIR=/data/workdir
 
-# GoDaddy
-GODADDY_KEY="$(bashio::config 'key')"
-GODADDY_SECRET="$(bashio::config 'secret')"
-GODADDY_DOMAIN="$(bashio::config 'domain')"
-GODADDY_HOSTNAME="$(bashio::config 'hostname')"
-GODADDY_TTL="$(bashio::config 'ttl')"
-export GODADDY_KEY
-export GODADDY_SECRET
-export GODADDY_DOMAIN
-export GODADDY_HOSTNAME
-export GODADDY_TTL
+# Gandi
+GANDI_KEY="$(bashio::config 'key')"
+GANDI_DOMAIN="$(bashio::config 'domain')"
+GANDI_HOSTNAME="$(bashio::config 'hostname')"
+GANDI_TTL="$(bashio::config 'ttl')"
+export GANDI_KEY
+export GANDI_DOMAIN
+export GANDI_HOSTNAME
+export GANDI_TTL
 
-FQDN="${GODADDY_HOSTNAME}.${GODADDY_DOMAIN}"
+FQDN="${GANDI_HOSTNAME}.${GANDI_DOMAIN}"
 
 # Let's encrypt
 LE_ACCEPT_TERMS="$(bashio::config 'lets_encrypt.accept_terms')"
@@ -111,7 +109,7 @@ do
     if [ "${IPV4}" != '' ] && [ "${IPV4}" != "${LAST_IPV4}" ]
     then
         EXIT_CODE=0
-        godaddy_update_dns.sh set "${GODADDY_HOSTNAME}" A "${IPV4}" || EXIT_CODE=${?}
+        gandi_update_dns.sh set "${GANDI_HOSTNAME}" A "${IPV4}" || EXIT_CODE=${?}
 
         if [ $EXIT_CODE -eq 0 ]
         then
@@ -125,7 +123,7 @@ do
     if [ "${IPV6}" != '' ] && [ "${IPV6}" != "${LAST_IPV6}" ]
     then
         EXIT_CODE=0
-        godaddy_update_dns.sh set "${GODADDY_HOSTNAME}" AAAA "${IPV6}" || EXIT_CODE=${?}
+        gandi_update_dns.sh set "${GANDI_HOSTNAME}" AAAA "${IPV6}" || EXIT_CODE=${?}
 
         if [ $EXIT_CODE -eq 0 ]
         then

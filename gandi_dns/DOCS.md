@@ -1,4 +1,4 @@
-# Home Assistant Add-on: GoDaddy DNS
+# Home Assistant Add-on: Gandi DNS
 
 ## Installation
 
@@ -10,10 +10,10 @@ Follow these steps to get the add-on installed on your system:
 
 ## How to use
 
-1. Visit the [Gandi Developer Portal][gandi-dev] and create a "Production" API key for the GoDaddy account that is hosting the domain you want to use for Home Assistant.
-2. In the GoDaddy DNS add-on configuration, perform the following:
-    - Copy the API key and secret tokens from GoDaddy and paste into the `key` and `secret` options.
-    - Update the `domain` option with the full domain name that is hosted by GoDaddy. E.g., `my-godaddy-domain.com`.
+1. Visit the [Gandi Developer Portal][gandi-dev] and create a PAT key for the Gandi account that is hosting the domain you want to use for Home Assistant.
+2. In the Gandi DNS add-on configuration, perform the following:
+    - Copy the PAT key and secret tokens from Gandi and paste into the `pat` option.
+    - Update the `domain` option with the full domain name that is hosted by Gandi. E.g., `my-gandi-domain.com`.
     - Update the `hostname` option with a name you want to use under the domain. E.g., `my-hostname`.
 3. If you want the add-on to automatically obtain a SSL certificate from Let's Encrypt and enable HTTPS, you must agree to the [Let's Encrypt Subscriber Agreement][le-legal] and perform the following:
     - Change `lets_encrypt.accept_terms` to `true`.
@@ -30,15 +30,14 @@ lets_encrypt:
   keyfile: privkey.pem
   renewal_period: 5184000
   dns_delay: 60
-key: J4ikisg_Gi32gL4eo426plqWg1hj32X6df
-secret: 2Td3YTgFjYTgFjdWh6d2on
-domain: my-godaddy-domain.com
+pat: H0l4C4r4C0l4
+domain: my-gandi-domain.com
 hostname: my-hostname
 ttl: 600
 scan_interval: 300
 ```
 
-In this example, the add-on will register the fully qualified domain name `my-hostname.my-godaddy-domain.com` with the public IP address you are currently using and obtain a Let's Encrypt SSL certificate for that domain name.
+In this example, the add-on will register the fully qualified domain name `my-hostname.my-gandi-domain.com` with the public IP address you are currently using and obtain a Let's Encrypt SSL certificate for that domain name.
 
 Additionally, you'll need to configure the Home Assistant Core to pick up the SSL certificates.
 This is done by setting the following configuration for the [HTTP Integration][http-integration] configuration in your `configuration.yaml`:
@@ -98,17 +97,14 @@ This option allows you to override the auto-detection and specify an IPv6 addres
 If you specify a URL here, contents of the resource it points to will be fetched and used as the address.
 This enables getting the address with an alternative service like https://ipv6.text.wtfismyip.com
 
-### Option: `key`
+### Option: `pat`
 
-The key token that you receive from GoDaddy's API Key Management.
+The PAT key that you receive from Gandi's PAT Key Management.
 
-### Option: `secret`
-
-The secret token that corresponds to your GoDaddy API key.
 
 ### Option: `domain`
 
-A domain registered under your GoDaddy account.
+A domain registered under your Gandi account.
 
 ### Option: `hostname`
 
@@ -120,7 +116,7 @@ The number of seconds to wait before checking whether DNS records need updating 
 
 ## Known issues and limitations
 
-- You must have a domain hosted by GoDaddy.
+- You must have a domain hosted by Gandi.
 
 ## Support
 
