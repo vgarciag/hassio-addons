@@ -10,6 +10,10 @@ systems that have installed Home Assistant.
 
 ## Add-ons provided by this repository
 
+- **[Gandi DNS](/gandi_dns/README.md)**
+
+    Automatically update your Gandi DNS IP address with integrated HTTPS support via Let's Encrypt.
+
 - **[GoDaddy DNS](/godaddy_dns/README.md)**
 
     Automatically update your GoDaddy DNS IP address with integrated HTTPS support via Let's Encrypt.
