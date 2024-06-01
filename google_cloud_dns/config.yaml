@@ -1,6 +1,6 @@
 name: Google Cloud DNS
 description: Google Cloud DNS updating service with Let's Encrypt support
-version: "1.0.3"
+version: "1.0.4"
 slug: google_cloud_dns
 url: https://github.com/mrmichaelrb/hassio-addons
 startup: services
