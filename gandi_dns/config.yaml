@@ -34,8 +34,7 @@ schema:
     dns_delay: int
   ipv4: str?
   ipv6: str?
-  key: str
-  secret: str
+  pat: str
   domain: str
   hostname: str
   ttl: int

@@ -9,11 +9,11 @@ CERT_DIR=/data/letsencrypt
 WORK_DIR=/data/workdir
 
 # Gandi
-GANDI_KEY="$(bashio::config 'key')"
+GANDI_PAT="$(bashio::config 'pat')"
 GANDI_DOMAIN="$(bashio::config 'domain')"
 GANDI_HOSTNAME="$(bashio::config 'hostname')"
 GANDI_TTL="$(bashio::config 'ttl')"
-export GANDI_KEY
+export GANDI_PAT
 export GANDI_DOMAIN
 export GANDI_HOSTNAME
 export GANDI_TTL

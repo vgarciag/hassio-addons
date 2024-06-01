@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 set -e
 
-ACTION="${1}"
-HOSTNAME="${2}"
+DNS_ACTION="${1}"
+DNS_HOSTNAME="${2}"
 RECORD_TYPE="${3}"
 DATA_VALUE="${4}"
 
 EXIT_CODE=0
 
-if [ "${ACTION}" = 'remove' ]
+if [ "${DNS_ACTION}" = 'remove' ]
 then
-    ANSWER="$(curl -s -X DELETE "https://api.godaddy.com/v1/domains/${GODADDY_DOMAIN}/records/${RECORD_TYPE}/${HOSTNAME}" \
-        -H "Authorization: sso-key ${GODADDY_KEY}:${GODADDY_SECRET}")" \
+    ANSWER="$(curl -s -X DELETE "https://api.gandi.net/v5/livedns/domains/${GANDI_DOMAIN}/records/${DNS_HOSTNAME}/${RECORD_TYPE}" \
+        -H "Authorization: Bearer ${GANDI_PAT}")" \
         || EXIT_CODE=${?}
 else
-    ANSWER="$(curl -s -X PUT "https://api.godaddy.com/v1/domains/${GODADDY_DOMAIN}/records/${RECORD_TYPE}/${HOSTNAME}" \
+    ANSWER="$(curl -s -X POST "https://api.gandi.net/v5/livedns/domains/${GANDI_DOMAIN}/records/${DNS_HOSTNAME}/${RECORD_TYPE}" \
         -H 'accept: application/json' \
         -H 'Content-Type: application/json' \
-        -H "Authorization: sso-key ${GODADDY_KEY}:${GODADDY_SECRET}" \
-        -d '[{"data":"'"${DATA_VALUE}"'","ttl":'"${GODADDY_TTL}"'}]')" \
+        -H "Authorization: Bearer ${GANDI_PAT}" \
+        -d '{"rrset_values":["'"${DATA_VALUE}"'"],"rrset_ttl":'"${GANDI_TTL}"'}')" \
         || EXIT_CODE=${?}
 fi
 
