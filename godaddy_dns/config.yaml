@@ -1,6 +1,6 @@
 name: GoDaddy DNS
 description: GoDaddy DNS updating service with Let's Encrypt support
-version: "1.0.5"
+version: "1.0.7"
 slug: godaddy_dns
 url: https://github.com/mrmichaelrb/hassio-addons
 startup: services

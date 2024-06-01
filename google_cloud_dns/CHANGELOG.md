@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- change base architecture to: ghcr.io/hassio-addons/base:16.0.0
+- Dockerfile has default values
+
 ## 1.0.3
 
 - Converted JSON to Home Assistant standard YAML
