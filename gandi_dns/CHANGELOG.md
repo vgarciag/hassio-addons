@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+- Change Gandi update to PUT action in order to replace the record.
+- Some fixes to Doc.
+- Removed uneeded build architectures.
 
 ## 1.0.2
 
