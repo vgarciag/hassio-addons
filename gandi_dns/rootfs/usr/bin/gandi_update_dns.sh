@@ -14,7 +14,7 @@ then
         -H "Authorization: Bearer ${GANDI_PAT}")" \
         || EXIT_CODE=${?}
 else
-    ANSWER="$(curl -s -X POST "https://api.gandi.net/v5/livedns/domains/${GANDI_DOMAIN}/records/${DNS_HOSTNAME}/${RECORD_TYPE}" \
+    ANSWER="$(curl -s -X PUT "https://api.gandi.net/v5/livedns/domains/${GANDI_DOMAIN}/records/${DNS_HOSTNAME}/${RECORD_TYPE}" \
         -H 'accept: application/json' \
         -H 'Content-Type: application/json' \
         -H "Authorization: Bearer ${GANDI_PAT}" \

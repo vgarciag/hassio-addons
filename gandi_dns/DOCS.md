@@ -132,7 +132,7 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/mrmichaelrb/hassio-addons/issues
+[issue]: https://github.com/vgarciag/hassio-addons/issues
 [reddit]: https://reddit.com/r/homeassistant
 [gandi-dev]: https://api.gandi.net/
 [le-legal]: https://letsencrypt.org/repository/
